@@ -1,0 +1,343 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "foodtomusic",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ingredientmusic",
+                    "slots": [
+                        {
+                            "name": "ingredient",
+                            "type": "IngredientName"
+                        }
+                    ],
+                    "samples": [
+                        "I am eating {ingredient}  ",
+                        "I ate {ingredient}",
+                        "I cooked {ingredient}",
+                        "I like {ingredient}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "IngredientName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "green olives"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "goat cheese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "brocolli"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "extra virgin olive oil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nuts/seeds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "parmesan"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "french dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "balsamic vinegar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ranch dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "italian dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "caesar dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "raspberry vinaigrette"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dried cranberries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cucumber"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "carrot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "corn"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "strawberries"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pomegranate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "watermelon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thousand island dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "avocado"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bell pepper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "honey mustard dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cauliflower"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "radishes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "edamame"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "steak"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "diced ham"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blue cheese dressing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "feta cheese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tomatoes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bacon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mushroom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chicken"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kidney beans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "black olives"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "egg"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "red onion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cheddar cheese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mozzarella cheese"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "ingredientmusic",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "ingredient",
+                            "type": "IngredientName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1514262872578.1379747113972"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1183243660076.10730037335",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which ingredients ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1514262872578.1379747113972",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What ingredients did you use?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What did you eat?"
+                    }
+                ]
+            }
+        ]
+    }
+}
