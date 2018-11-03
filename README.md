@@ -11,7 +11,16 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 
 ## Usage
 
-## Functionality
+## BitterSweet Alexa Skill
+
+## Lambda Function
+
+### Functionality
+* `lambda_handler`:
+* `on_start`:
+* `on_launch`:
+* `on_end`:
+* `intent_scheme`:
 
 ## Notes
 
