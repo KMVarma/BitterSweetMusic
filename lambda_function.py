@@ -25,7 +25,7 @@ def on_start():
 
 def on_launch(event):
     ing = random.choice(Ingredient_List)
-    onlunch_MSG = "Hi, welcome to the My Food to Music Alexa Skill. I will play music depending on food ingredients."
+    onlunch_MSG = "Hi, welcome to BitterSweet Sounds. I will play music depending on food ingredients. What food do you like or are you eating? You could say for example: I like "+ ing + "or I'm eating" + ing
     reprompt_MSG = "What food do you like or are you eating? You could say for example: I like "+ ing + "or I'm eating" + ing
     card_TEXT = "Pick a food."
     card_TITLE = "Choose a food."
@@ -105,14 +105,14 @@ def stop_the_skill(event):
 
 def assistance(event):
     assistance_MSG = "You can choose among these ingredients: " + ', '.join(map(str, Ingredient_List)) + ". Be sure to use the full name when asking about the ingredient."
-    reprompt_MSG = "Do you want to hear music from salad ingredient ?r?"
+    reprompt_MSG = "Do you want to hear music from a food ingredient?"
     card_TEXT = "You've asked for help."
     card_TITLE = "Help"
     return output_json_builder_with_reprompt_and_card(assistance_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
 
 def fallback_call(event):
     fallback_MSG = "I can't help you with that, try rephrasing the question or ask for help by saying HELP."
-    reprompt_MSG = "Do you want to hear music from salad ingredient ?"
+    reprompt_MSG = "Do you want to hear music from a food ingredient?"
     card_TEXT = "You've asked a wrong question."
     card_TITLE = "Wrong question."
     return output_json_builder_with_reprompt_and_card(fallback_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
