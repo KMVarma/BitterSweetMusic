@@ -10,21 +10,37 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 
 ## Usage
 
+In order to invoke the skill, the user should say "open BitterSweet Sounds"
+
+To specify the food that the user wants to match music to, they can use the following utterances:
+* ""
+* ""
+* ""
+
+In response to the above utterances, Alexa will list the ingredients in the food and ask the user to choose one to enhance the taste of. The user needs to respond with one of the ingredients and then the ingredient will be matched to a song that will start playing.
+
+
+
 ### Sample Usage
 
 User: "Alexa, open BitterSweet Sounds"
 
-Alexa:
+Alexa: 
+"Hi, welcome to the My Food to Music Alexa Skill. I will play music depending on food ingredients."
+"What food do you like or are you eating? You could say for example: I like salad or I'm eating salad"
 
-User: "I'm eating a hamburger"
+User: "I am eating a hamburger"
 
-Alexa: Which of the following ingredients
+Alexa: "Which of the following ingredients would you like to enhance with music? Cheese, beef, lettuce, ketchup, onion"
+
+User: "cheese"
+
+Alexa: *plays a song that complements the bitter tastes in cheese*
 
 ## BitterSweet Custom Alexa Skill
 
-### Intents
+bittersweet.json defines the interaction model.
 
-### Utterances
 
 ## AWS Lambda Function
 
