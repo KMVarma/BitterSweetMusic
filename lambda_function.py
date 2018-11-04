@@ -1,3 +1,4 @@
+from __future__ import print_function
 import random
 import json
 
@@ -5,8 +6,9 @@ Food_dict = {"tacos": ["cheese", "beef", "chicken", "tomato"], "pasta": ["noodle
 Ingredient_List = ["green olives","goat cheese","brocolli","extra virgin olive oil","nuts","seeds","parmesan","french dressing","balsamic vinegar","ranch dressing","italian dressing","caesar dressing","raspberry vinaigrette","dried cranberries","cucumber","carrot","corn","strawberries","pomegranate","watermelon","thousand island dressing","avocado","bell pepper","honey mustard dressing","cauliflower","radishes","edamame","steak","diced ham","blue cheese dressing","feta cheese","tomatoes","bacon","mushroom","chicken","kidney beans","black olives","egg","red onion","cheddar cheese","mozzarella cheese"]
 Sweet_List   = ["raspberry vinaigrette","dried cranberries","cucumber","carrot","corn","strawberries","pomegranate","watermelon","thousand island dressing","avocado","bell pepper","honey mustard dressing","cauliflower","radishes","edamame","steak","diced ham","blue cheese dressing","feta cheese","tomatoes","bacon","mushroom","chicken","kidney beans","black olives","egg","red onion","cheddar cheese","mozzarella cheese"]
 Bitter_List = ["green olives","goat cheese","brocolli","extra virgin olive oil","nuts","seeds","parmesan","french dressing","balsamic vinegar","ranch dressing","italian dressing","caesar dressing"]
-Sweet_Song = ["https://www.youtube.com/watch?v=_kYYzwo7l5c", "https://www.youtube.com/watch?v=LeOfe-fpHNc", "https://www.youtube.com/watch?v=3eBnlAfvbqE"]
-Bitter_Song = ["https://www.youtube.com/watch?v=pyUZh_Cbw6Q", "https://www.youtube.com/watch?v=lMl0kxzf4YU", "https://www.youtube.com/watch?v=pJDyrEGgyfc"]
+Sweet_Song = ["https://drive.google.com/file/d/1TYU_x0zTUpXswp1mD1QOPyqBulx_lgZt/view?usp=sharing", "https://drive.google.com/file/d/1xUw66KKetx20r3EVleiCi0DYbOi0EH5b/view?usp=sharing", "https://drive.google.com/file/d/1CCOh8ByZHkaA13xGUYR2TtuG1rOhGcpv/view?usp=sharing"]
+Bitter_Song=['https://yzw.wywx.xyz/b142c41faf921bee9485c63b8fc89c75/3eBnlAfvbqE', 'https://yzw.wywx.xyz/b142c41faf921bee9485c63b8fc89c75/3eBnlAfvbqE', 'https://yzw.wywx.xyz/b142c41faf921bee9485c63b8fc89c75/3eBnlAfvbqE']
+#Bitter_Song = ["https://www.youtube.com/watch?v=pyUZh_Cbw6Q", "https://www.youtube.com/watch?v=lMl0kxzf4YU", "https://www.youtube.com/watch?v=pJDyrEGgyfc"]
 
 def lambda_handler(event, context):
     if event['session']['new']:
@@ -21,7 +23,8 @@ def on_start():
     print("Session Started.")
 def on_launch(event):
     ing = random.choice(Ingredient_List)
-    onlunch_MSG = "Hi, welcome to the My Food to Music Alexa Skill. I will play music depending on Salad Ingredients."
+    #Hi, welcome to the My Food to Music Alexa Skill. I will play music depending on Salad Ingredients.
+    onlunch_MSG = "Hi Welcome"
     "You could say for example: I like "+ ing
     reprompt_MSG = "What do you like ?"
     card_TEXT = "Pick a Ingredient."
@@ -32,15 +35,15 @@ def on_end():
 def intent_scheme(event):
     intent_name = event['request']['intent']['name']
     if intent_name == "ingredientmusic":
-        #return ingredientCheck(event)     
-        return taste_to_url(event)
+    #return ingredientCheck(event)
+     return taste_to_url(event)
     elif intent_name in ["AMAZON.NoIntent", "AMAZON.StopIntent", "AMAZON.CancelIntent"]:
         return stop_the_skill(event)
     elif intent_name == "AMAZON.HelpIntent":
         return assistance(event)
     elif intent_name == "AMAZON.FallbackIntent":
         return fallback_call(event)
-    
+
 def ingredientCheck(event):
     ingredient_name=event['request']['intent']['slots']['ingredient']['value']
     ingredient_list_lower=[w.lower() for w in Ingredient_List]
@@ -59,6 +62,8 @@ def ingredientCheck(event):
 
 def taste_to_url(event):
     ingredient_name=event['request']['intent']['slots']['ingredient']['value']
+    print('got ingredient_name ' + ingredient_name)
+    url = 'https://open.spotify.com/track/3zDUfJySjBy0HWsiVp09UD'
     if ingredient_name in Sweet_List:
         url = random.choice(Sweet_Song)
     else:
@@ -66,19 +71,30 @@ def taste_to_url(event):
     return json_play_music(url)
 
 def json_play_music(url):
-    data = {}
-    data['type']="AudioPlayer.Play"
-    data['playBehavior']= "REPLACE_ALL"
-    data['audioItem']= {"stream": {"url": url, "token":"sweet_bitter", "offsetInMilliseconds":0}}
-    return data
-        
+    return {"response": {
+            "directives": [
+                {
+                    "type": "AudioPlayer.Play",
+                    "playBehavior": "REPLACE_ALL",
+                    "audioItem": {
+                        "stream": {
+                            "token": "12345",
+                            "url": url,
+                            "offsetInMilliseconds": 0
+                        }
+                    }
+                }
+            ],
+            "shouldEndSession": True
+        }}
+
 def stop_the_skill(event):
     stop_MSG = "Thank you. Bye!"
     reprompt_MSG = ""
     card_TEXT = "Bye."
     card_TITLE = "Bye Bye."
     return output_json_builder_with_reprompt_and_card(stop_MSG, card_TEXT, card_TITLE, reprompt_MSG, True)
-    
+
 def assistance(event):
     assistance_MSG = "You can choose among these ingredients: " + ', '.join(map(str, Ingredient_List)) + ". Be sure to use the full name when asking about the ingredient."
     reprompt_MSG = "Do you want to hear music from salad ingredient ?r?"
@@ -91,7 +107,7 @@ def fallback_call(event):
     card_TEXT = "You've asked a wrong question."
     card_TITLE = "Wrong question."
     return output_json_builder_with_reprompt_and_card(fallback_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
-    
+
 # The response of our Lambda function should be in a json format.
 def plain_text_builder(text_body):
     text_dict = {}
@@ -102,13 +118,13 @@ def reprompt_builder(repr_text):
     reprompt_dict = {}
     reprompt_dict['outputSpeech'] = plain_text_builder(repr_text)
     return reprompt_dict
-    
+
 def card_builder(c_text, c_title):
     card_dict = {}
     card_dict['type'] = "Simple"
     card_dict['title'] = c_title
     card_dict['content'] = c_text
-    return card_dict    
+    return card_dict
 def response_field_builder_with_reprompt_and_card(outputSpeach_text, card_text, card_title, reprompt_text, value):
     speech_dict = {}
     speech_dict['outputSpeech'] = plain_text_builder(outputSpeach_text)
