@@ -2,15 +2,15 @@
 
 ## Introduction
 
-BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either the bitter or sweet tastes in the food that a user is eating.  The user tells Alexa what they are eating and Alexa will identify the ingredients in the food, allow the user to choose one, and play a song that either compliments the bitter taste of a bitter ingredient or compliments the sweet taste of a sweet ingredient.
+BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either the bitter or sweet tastes in the food that a user is eating.  The user tells Alexa what he/she is eating and Alexa will identify the ingredients in the food, allow the user to choose one, and play a song that either complements the bitter taste of a bitter ingredient or complements the sweet taste of a sweet ingredient.
 
 ### Music's Affect on Taste
 
-Multiple studies support tha claim that music and sounds can influence the way that something tastes.  A prominent researcher on the subject, Oxford psychology professor Charles Spence, in his publiation entitled [THE INFLUENCE OF AUDITORY CUES ON THE PERCEPTION OF, AND RESPONSES TO, FOOD AND DRINK](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-459X.2009.00267.x) claims that high-pitched music is often associated with sweet and sour tastes therefore listening to it while eating will enhance the sweet/sour tastes.  Low-pitched notes correspond with bitter and umami tastes.
+Multiple studies support tha claim that music and sounds can influence the way that something tastes.  A prominent researcher on the subject, Oxford psychology professor Charles Spence, in his publiation entitled [The Influence of Auditory Cues on the Perception of, and Responses to, Food and Drink](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-459X.2009.00267.x) claims that high-pitched music is often associated with sweet and sour tastes therefore listening to it while eating will enhance the sweet/sour tastes.  Low-pitched notes correspond with bitter and umami tastes.
 
 Other associations are made through other research, and these associations as they relate specifically to bitter and sweet sounds are combined below (these are what BitterSweet Sounds uses to choose songs to classify as sweet or bitter):
 * Sweet: rich tones, upbeat, high-pitched, flute, piano
-* Bitter: deep tnes, low-pitched, sombre, brass
+* Bitter: deep tones, low-pitched, sombre, brass
 
 A popular application of this research is creating a sound experience in a resturaunt that will compliment the food and make it taste better.
 
@@ -59,9 +59,9 @@ lambda_function.py is a serverless AWS labmda function that has all of the backe
 ## Future Work
 
 * allow the skill to recognize more food and corresponding ingredients, as well as the possible songs that the ingredients can be mapped to.  This could potentially involve using a search API to find the ingredients in a given food or through consulting a knowledge base such as Wikidata.  One method we considered for recognizing/classifying unknown/unclassified food is through using image recognition to identify the food.
-* incorporate the other taste receptors (sour, salty, umami) and other factors that influence taste, for example, matching the texture of a food to a texture of sound will enhance textural components.
-* lighting and color can also influence taste receptors, so using the light ring on the echo or connecting it to lights in the home, the lighting can be altered to enhance certain tastes
+* incorporate the other taste receptors (sour, salty, umami) and other factors that influence taste perception; for example, matching the texture of a food to a texture of sound will enhance textural components.
+* lighting and color can also influence taste receptors, so using the light ring on the Echo or connecting it to lights in the home to enhance certain tastes by altering the lighting
 
 ## Potential Applications
 
-There is potential for BitterSweet Sounds to be applied to health purposes such as increasing sweetness in food in order to satisfy someone's craving for sugar without them needing to eat a lot of sugar. It can also alter the taste of a food that a person doesn't like to make it taste better to them, which is useful in situations where a person needs to eat something they don't like the taste of. When someone is stressed their tastes are distorted, which in most cases means a craving for unhealthy food high in sugar and fat, so BitterSweet Sounds can provide a way to distort the taste of foods in order to match the distortion that stress is causing.
+There is potential for BitterSweet Sounds to be applied to health purposes such as increasing sweetness in food in order to satisfy someone's craving for sugar without him/her needing to eat a lot of sugar. It can also alter the taste of a food that a person doesn't like to make it taste better to them, which is useful in situations where a person needs to eat something they don't like the taste of. When someone is stressed, their tastes are distorted, which in most cases means a craving for unhealthy food high in sugar and fat, so BitterSweet Sounds can provide a way to distort the taste of foods in order to match the distortion that stress is causing. Additionally, enhancing the eating experience through changing taste perception could increase motivation by bringing more happiness into someone's life. Having happy experiences is associated with higher levels of serotonin, which is a neurotransmitter important in sleep and diet regulation, motivation, social behavior, and many other important human functions. Certain types of songs can increase conversation at the table; this idea combined with the happiness booster idea could also help foster better social interactions.
