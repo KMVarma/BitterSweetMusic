@@ -6,7 +6,13 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 
 ### Music's Affect on Taste
 
+Multiple studies support tha claim that music and sounds can influence the way that something tastes.  A prominent researcher on the subject, Oxford psychology professor Charles Spence, in his publiation entitled [THE INFLUENCE OF AUDITORY CUES ON THE PERCEPTION OF, AND RESPONSES TO, FOOD AND DRINK](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-459X.2009.00267.x) claims that high-pitched music is often associated with sweet and sour tastes therefore listening to it while eating will enhance the sweet/sour tastes.  Low-pitched notes correspond with bitter and umami tastes.
 
+Other associations are made through other research, and these associations as they relate specifically to bitter and sweet sounds are combined below (these are what BitterSweet Sounds uses to choose songs to classify as sweet or bitter):
+* Sweet: rich tones, upbeat, high-pitched, flute, piano
+* Bitter: deep tnes, low-pitched, sombre, brass
+
+A popular application of this research is creating a sound experience in a resturaunt that will compliment the food and make it taste better.
 
 ## Usage
 
