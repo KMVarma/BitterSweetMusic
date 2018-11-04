@@ -2,13 +2,13 @@ from __future__ import print_function
 import random
 import json
 
-Food_dict = {"tacos": ["cheese", "beef", "chicken", "tomato"], "pasta": ["noodles", "cheese", "meatball", "marinara sauce", "alfredo sauce"], "hamburger": ["cheese", "beef", "lettuce", "ketchup", "onion"], "salad": ["ranch dressing", "cheese", "avocado", "chicken", "seeds", "brocolli"], "pizza": ["cheese", "tomato sauce", "pepperoni", "mushrooms"], "smoothie": ["fruit", "yogurt", "milk", "peanut butter", "tea"]}
-Ingredient_List = ["green olives","goat cheese","brocolli","extra virgin olive oil","nuts","seeds","parmesan","french dressing","balsamic vinegar","ranch dressing","italian dressing","caesar dressing","raspberry vinaigrette","dried cranberries","cucumber","carrot","corn","strawberries","pomegranate","watermelon","thousand island dressing","avocado","bell pepper","honey mustard dressing","cauliflower","radishes","edamame","steak","diced ham","blue cheese dressing","feta cheese","tomatoes","bacon","mushroom","chicken","kidney beans","black olives","egg","red onion","cheddar cheese","mozzarella cheese"]
-Sweet_List   = ["raspberry vinaigrette","dried cranberries","cucumber","carrot","corn","strawberries","pomegranate","watermelon","thousand island dressing","avocado","bell pepper","honey mustard dressing","cauliflower","radishes","edamame","steak","diced ham","blue cheese dressing","feta cheese","tomatoes","bacon","mushroom","chicken","kidney beans","black olives","egg","red onion","cheddar cheese","mozzarella cheese"]
-Bitter_List = ["green olives","goat cheese","brocolli","extra virgin olive oil","nuts","seeds","parmesan","french dressing","balsamic vinegar","ranch dressing","italian dressing","caesar dressing"]
-Sweet_Song = ["https://drive.google.com/file/d/1TYU_x0zTUpXswp1mD1QOPyqBulx_lgZt/view?usp=sharing", "https://drive.google.com/file/d/1xUw66KKetx20r3EVleiCi0DYbOi0EH5b/view?usp=sharing", "https://drive.google.com/file/d/1CCOh8ByZHkaA13xGUYR2TtuG1rOhGcpv/view?usp=sharing"]
-Bitter_Song=['https://yzw.wywx.xyz/b142c41faf921bee9485c63b8fc89c75/3eBnlAfvbqE', 'https://yzw.wywx.xyz/b142c41faf921bee9485c63b8fc89c75/3eBnlAfvbqE', 'https://yzw.wywx.xyz/b142c41faf921bee9485c63b8fc89c75/3eBnlAfvbqE']
-#Bitter_Song = ["https://www.youtube.com/watch?v=pyUZh_Cbw6Q", "https://www.youtube.com/watch?v=lMl0kxzf4YU", "https://www.youtube.com/watch?v=pJDyrEGgyfc"]
+Food_dict = {"tacos": ["cheese", "beef", "chicken", "tomatoes"], "pasta": ["noodles", "cheese", "meatballs", "marinara sauce", "alfredo sauce"], "hamburger": ["cheese", "beef", "lettuce", "ketchup", "onion"], "salad": ["ranch dressing", "cheese", "avocado", "chicken", "seeds", "broccoli"], "pizza": ["cheese", "tomato sauce", "pepperoni", "mushroom"], "smoothie": ["fruit", "yogurt", "milk", "peanut butter", "tea"]}
+Ingredient_List = ["ketchup", "lettuce", "marinara sauce", "alfredo sauce", "meatballs", "noodles", "beef", "cheese", "green olives","goat cheese","broccoli","olive oil","nuts","seeds","parmesan","french dressing","balsamic vinegar","ranch dressing","italian dressing","raspberry vinaigrette","dried cranberries","cucumber","carrot","tomato sauce", "pepperoni","corn","strawberries","fruit","yogurt","milk","peanut butter","tea","pomegranate","watermelon","thousand island dressing","avocado","bell pepper","honey mustard dressing","cauliflower","radishes","edamame","steak","diced ham","blue cheese dressing","feta cheese","tomatoes","bacon","mushroom","chicken","kidney beans","black olives","egg","onion","cheddar cheese","mozzarella cheese"]
+Sweet_List   = ["ketchup", "marinara sauce","alfredo sauce","raspberry vinaigrette","dried cranberries","cucumber","carrot","corn","strawberries","pomegranate","watermelon","french dressing","thousand island dressing","avocado","bell pepper","honey mustard dressing","cauliflower","radishes", "tomato sauce","fruit","yogurt","milk", "tea"]
+Bitter_List = ["lettuce", "cheese", "green olives","noodles","meatballs","beef","goat cheese","broccoli","olive oil","nuts","seeds","parmesan","balsamic vinegar","ranch dressing","italian dressing", "pepperoni", "onion", "peanut butter", "edamame","steak", "diced ham","blue cheese dressing", "feta cheese", "tomatoes", "bacon", "mushroom", "chicken", "kidney beans", "black olives", "egg", "cheddar cheese", "mozzarella cheese"]
+Sweet_Song = ["https://s3.amazonaws.com/bittersweet123565/Fauré+G.+-+Piece+for+flutepiano.mp3", "https://s3.amazonaws.com/bittersweet123565/Fireflies+by+Owl+City+(Harp+cover).mp3", "https://s3.amazonaws.com/bittersweet123565/Yiruma+River+Flows+In+You+(Higher+Pitch)+Piano.mp3"]
+Bitter_Song = ["https://s3.amazonaws.com/bittersweet123565/Adam+Ben+Ezra+-+AWESOME+UPRIGHT+BASS+SOLO.mp3", "https://s3.amazonaws.com/bittersweet123565/Down+in+the+River+to+Pray.mp3", "https://s3.amazonaws.com/bittersweet123565/Ultra+Deep+Bass+Test+%233+-+Can+U+Hear+Me+(Slowed).mp3"]
+default_song = "https://s3.amazonaws.com/bittersweet123565/The+Duck+Song.mp3"
 
 def lambda_handler(event, context):
     if event['session']['new']:
@@ -19,24 +19,28 @@ def lambda_handler(event, context):
         return intent_scheme(event)
     elif event['request']['type'] == "SessionEndedRequest":
         return on_end()
+
 def on_start():
     print("Session Started.")
+
 def on_launch(event):
     ing = random.choice(Ingredient_List)
-    #Hi, welcome to the My Food to Music Alexa Skill. I will play music depending on Salad Ingredients.
-    onlunch_MSG = "Hi Welcome"
-    "You could say for example: I like "+ ing
-    reprompt_MSG = "What do you like ?"
-    card_TEXT = "Pick a Ingredient."
-    card_TITLE = "Choose a ingredient."
+    onlunch_MSG = "Hi, welcome to the My Food to Music Alexa Skill. I will play music depending on food ingredients."
+    reprompt_MSG = "What food do you like or are you eating? You could say for example: I like "+ ing + "or I'm eating" + ing
+    card_TEXT = "Pick a food."
+    card_TITLE = "Choose a food."
     return output_json_builder_with_reprompt_and_card(onlunch_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
+
 def on_end():
     print("Session Ended.")
+
 def intent_scheme(event):
     intent_name = event['request']['intent']['name']
     if intent_name == "ingredientmusic":
-    #return ingredientCheck(event)
-     return taste_to_url(event)
+        if 'value' in event['request']['intent']['slots']['food']:
+            return extract_ingredient(event)
+        else:
+            return taste_to_url(event)
     elif intent_name in ["AMAZON.NoIntent", "AMAZON.StopIntent", "AMAZON.CancelIntent"]:
         return stop_the_skill(event)
     elif intent_name == "AMAZON.HelpIntent":
@@ -44,30 +48,32 @@ def intent_scheme(event):
     elif intent_name == "AMAZON.FallbackIntent":
         return fallback_call(event)
 
-def ingredientCheck(event):
-    ingredient_name=event['request']['intent']['slots']['ingredient']['value']
-    ingredient_list_lower=[w.lower() for w in Ingredient_List]
-    if ingredient_name.lower() in ingredient_list_lower:
-        reprompt_MSG = "You want to hear music from salad ingredient"
-        card_TEXT = "You've picked " + ingredient_name
-        card_TITLE = "You've picked " + ingredient_name
-        resultat = "i am a nice ingredient" + ingredient # ToDo: get info
-        return output_json_builder_with_reprompt_and_card(resultat, card_TEXT, card_TITLE, reprompt_MSG, False)
+def extract_ingredient(event):
+    food_name = event['request']['intent']['slots']['food']['value']
+    ingredient_list = Food_dict[food_name]
+    if food_name not in Food_dict:
+        resultat = "You haven't used the full name of a food. If you don't know what to do you can say Help."
+        reprompt_MSG = "You haven't used the full name of a food. Can you repeat?"
+        card_TEXT = "Use the food name"
+        card_TITLE = "Wrong food name"
     else:
-        wrongname_MSG = "You haven't used the full name of a player. If you don't know which ingredients you can pick say Help."
-        reprompt_MSG = "Do you want to hear music from salad ingredient ?"
-        card_TEXT = "Use the ingredient name."
-        card_TITLE = "Wrong ingredient name."
-        return output_json_builder_with_reprompt_and_card(wrongname_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
+        resultat = "You said you are eating " + str(food_name) + ". Which ingredient would you like to be enhanced?"
+        reprompt_MSG = "Which of the following ingredients would you like to enhance with music?"
+        for x in ingredient_list:
+            reprompt_MSG += x + ' '
+            resultat += x + ' '
+        card_TEXT = reprompt_MSG
+        card_TITLE = "Choose ingredient"
+    return output_json_builder_with_reprompt_and_card(resultat, card_TEXT, card_TITLE, reprompt_MSG, False)
 
 def taste_to_url(event):
-    ingredient_name=event['request']['intent']['slots']['ingredient']['value']
-    print('got ingredient_name ' + ingredient_name)
-    url = 'https://open.spotify.com/track/3zDUfJySjBy0HWsiVp09UD'
+    ingredient_name = event['request']['intent']['slots']['ingredient']['value']
     if ingredient_name in Sweet_List:
         url = random.choice(Sweet_Song)
-    else:
+    elif ingredient_name in Bitter_List:
         url = random.choice(Bitter_Song)
+    else:
+        url = default_song
     return json_play_music(url)
 
 def json_play_music(url):
@@ -101,6 +107,7 @@ def assistance(event):
     card_TEXT = "You've asked for help."
     card_TITLE = "Help"
     return output_json_builder_with_reprompt_and_card(assistance_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
+
 def fallback_call(event):
     fallback_MSG = "I can't help you with that, try rephrasing the question or ask for help by saying HELP."
     reprompt_MSG = "Do you want to hear music from salad ingredient ?"
@@ -108,7 +115,6 @@ def fallback_call(event):
     card_TITLE = "Wrong question."
     return output_json_builder_with_reprompt_and_card(fallback_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
 
-# The response of our Lambda function should be in a json format.
 def plain_text_builder(text_body):
     text_dict = {}
     text_dict['type'] = 'PlainText'
