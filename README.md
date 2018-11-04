@@ -1,4 +1,4 @@
-# BitterSweet Sound
+# BitterSweet Sounds
 
 ## Introduction
 
