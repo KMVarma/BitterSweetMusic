@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "foodtomusic",
+            "invocationName": "bittersweet sounds",
             "intents": [
                 {
                     "name": "AMAZON.FallbackIntent",
@@ -37,9 +37,21 @@
                         {
                             "name": "ingredient",
                             "type": "IngredientName"
+                        },
+                        {
+                            "name": "food",
+                            "type": "FoodName"
                         }
                     ],
                     "samples": [
+                        "{food}",
+                        "{ingredient}  please",
+                        "{ingredient}",
+                        "I am going to eat {ingredient}",
+                        "I am going to eat {food}",
+                        "I made {food}",
+                        "I cooked {food}",
+                        "I am eating {food}",
                         "I am eating {ingredient}  ",
                         "I ate {ingredient}",
                         "I cooked {ingredient}",
@@ -93,7 +105,102 @@
                     "values": [
                         {
                             "name": {
-                                "value": "green olives"
+                                "value": "tea"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peanut butter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yogurt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fruit",
+                                "synonyms": [
+                                    "fruits"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pepperoni"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tomato sauce"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ketchup"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lettuce"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "alfredo sauce",
+                                "synonyms": [
+                                    "alfredo"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "marinara sauce",
+                                "synonyms": [
+                                    "marinara"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meatballs",
+                                "synonyms": [
+                                    "meatball"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "noodles"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cheese"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beef"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seeds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green olives",
+                                "synonyms": [
+                                    "green olive"
+                                ]
                             }
                         },
                         {
@@ -103,27 +210,37 @@
                         },
                         {
                             "name": {
-                                "value": "brocolli"
+                                "value": "broccoli"
                             }
                         },
                         {
                             "name": {
-                                "value": "extra virgin olive oil"
+                                "value": "olive oil",
+                                "synonyms": [
+                                    "extra virgin olive oil",
+                                    "oil"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "nuts/seeds"
+                                "value": "nuts"
                             }
                         },
                         {
                             "name": {
-                                "value": "parmesan"
+                                "value": "parmesan",
+                                "synonyms": [
+                                    "parmesan cheese"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "french dressing"
+                                "value": "french dressing",
+                                "synonyms": [
+                                    "french sauce"
+                                ]
                             }
                         },
                         {
@@ -133,17 +250,18 @@
                         },
                         {
                             "name": {
-                                "value": "ranch dressing"
+                                "value": "ranch dressing",
+                                "synonyms": [
+                                    "ranch sauce"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "italian dressing"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "caesar dressing"
+                                "value": "italian dressing",
+                                "synonyms": [
+                                    "italian sauce"
+                                ]
                             }
                         },
                         {
@@ -153,17 +271,30 @@
                         },
                         {
                             "name": {
-                                "value": "dried cranberries"
+                                "value": "dried cranberries",
+                                "synonyms": [
+                                    "cranberry",
+                                    "dried cranberry",
+                                    "craisin",
+                                    "craisins",
+                                    "cranberries"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "cucumber"
+                                "value": "cucumber",
+                                "synonyms": [
+                                    "cucumbers"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "carrot"
+                                "value": "carrot",
+                                "synonyms": [
+                                    "carrots"
+                                ]
                             }
                         },
                         {
@@ -173,12 +304,18 @@
                         },
                         {
                             "name": {
-                                "value": "strawberries"
+                                "value": "strawberries",
+                                "synonyms": [
+                                    "strawberry"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "pomegranate"
+                                "value": "pomegranate",
+                                "synonyms": [
+                                    "pomegranates"
+                                ]
                             }
                         },
                         {
@@ -188,32 +325,50 @@
                         },
                         {
                             "name": {
-                                "value": "thousand island dressing"
+                                "value": "thousand island dressing",
+                                "synonyms": [
+                                    "thousand island sauce"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "avocado"
+                                "value": "avocado",
+                                "synonyms": [
+                                    "avocados"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "bell pepper"
+                                "value": "bell pepper",
+                                "synonyms": [
+                                    "bell peppers"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "honey mustard dressing"
+                                "value": "honey mustard dressing",
+                                "synonyms": [
+                                    "honey mustard sauce"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "cauliflower"
+                                "value": "cauliflower",
+                                "synonyms": [
+                                    "cauliflowers"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "radishes"
+                                "value": "radishes",
+                                "synonyms": [
+                                    "radish"
+                                ]
                             }
                         },
                         {
@@ -228,7 +383,10 @@
                         },
                         {
                             "name": {
-                                "value": "diced ham"
+                                "value": "diced ham",
+                                "synonyms": [
+                                    "ham"
+                                ]
                             }
                         },
                         {
@@ -238,12 +396,18 @@
                         },
                         {
                             "name": {
-                                "value": "feta cheese"
+                                "value": "feta cheese",
+                                "synonyms": [
+                                    "feta"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "tomatoes"
+                                "value": "tomatoes",
+                                "synonyms": [
+                                    "tomato"
+                                ]
                             }
                         },
                         {
@@ -253,7 +417,10 @@
                         },
                         {
                             "name": {
-                                "value": "mushroom"
+                                "value": "mushroom",
+                                "synonyms": [
+                                    "mushrooms"
+                                ]
                             }
                         },
                         {
@@ -263,81 +430,103 @@
                         },
                         {
                             "name": {
-                                "value": "kidney beans"
+                                "value": "kidney beans",
+                                "synonyms": [
+                                    "kidney bean"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "black olives"
+                                "value": "black olives",
+                                "synonyms": [
+                                    "black olive"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "egg"
+                                "value": "egg",
+                                "synonyms": [
+                                    "eggs"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "red onion"
+                                "value": "onion",
+                                "synonyms": [
+                                    "red onion",
+                                    "onions",
+                                    "red onions"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "cheddar cheese"
+                                "value": "cheddar cheese",
+                                "synonyms": [
+                                    "cheddar"
+                                ]
                             }
                         },
                         {
                             "name": {
-                                "value": "mozzarella cheese"
+                                "value": "mozzarella cheese",
+                                "synonyms": [
+                                    "mozzarella"
+                                ]
                             }
                         }
                     ]
-                }
-            ]
-        },
-        "dialog": {
-            "intents": [
+                },
                 {
-                    "name": "ingredientmusic",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
+                    "name": "FoodName",
+                    "values": [
                         {
-                            "name": "ingredient",
-                            "type": "IngredientName",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "Elicit.Slot.1514262872578.1379747113972"
+                            "name": {
+                                "value": "smoothie",
+                                "synonyms": [
+                                    "shakes",
+                                    "shake",
+                                    "smoothies"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "salad",
+                                "synonyms": [
+                                    "salads"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hamburger",
+                                "synonyms": [
+                                    "burgers",
+                                    "hamburgers",
+                                    "burger"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pasta"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tacos",
+                                "synonyms": [
+                                    "taco"
+                                ]
                             }
                         }
                     ]
                 }
             ]
-        },
-        "prompts": [
-            {
-                "id": "Elicit.Slot.1183243660076.10730037335",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "which ingredients ?"
-                    }
-                ]
-            },
-            {
-                "id": "Elicit.Slot.1514262872578.1379747113972",
-                "variations": [
-                    {
-                        "type": "PlainText",
-                        "value": "What ingredients did you use?"
-                    },
-                    {
-                        "type": "PlainText",
-                        "value": "What did you eat?"
-                    }
-                ]
-            }
-        ]
+        }
     }
 }
