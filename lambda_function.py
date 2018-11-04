@@ -25,8 +25,8 @@ def on_start():
 
 def on_launch(event):
     ing = random.choice(Ingredient_List)
-    onlunch_MSG = "Hi, welcome to BitterSweet Sounds. I will play music depending on food ingredients. What food do you like or are you eating? You could say for example: I like "+ ing + "or I'm eating" + ing
-    reprompt_MSG = "What food do you like or are you eating? You could say for example: I like "+ ing + "or I'm eating" + ing
+    onlunch_MSG = "Hi, welcome to BitterSweet Sounds. I will play music depending on food ingredients. What food do you like or are you eating? You could say for example: I like "+ ing + " or I'm eating " + ing
+    reprompt_MSG = "What food do you like or are you eating? You could say for example: I like "+ ing + " or I'm eating " + ing
     card_TEXT = "Pick a food."
     card_TITLE = "Choose a food."
     return output_json_builder_with_reprompt_and_card(onlunch_MSG, card_TEXT, card_TITLE, reprompt_MSG, False)
