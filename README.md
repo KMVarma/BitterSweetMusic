@@ -1,4 +1,4 @@
-# BitterSweet Music
+# BitterSweet Sound
 
 ## Introduction
 
@@ -6,7 +6,7 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 
 ### Music's Affect on Taste
 
-Psychologist Chalres Spence conduced research that showed musical pitch affecting the intesity of certain tastes.  Bitter Sweet Sounds bases the mapping between tastes and songs off of Spence's results that show high-pithed music associating with (and thus highlighting) sweet and sour tastes and low-pitch associating with bitter and umami tastes.  Many resturaunteurs consider the sounds of their resturaunt's environment as it can ifluence purchasing and flavor decisions
+
 
 ## Usage
 
