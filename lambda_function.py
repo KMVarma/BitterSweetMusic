@@ -59,6 +59,8 @@ def extract_ingredient(event):
     else:
         resultat = "You said you are eating " + str(food_name) + ". Which ingredient would you like to be enhanced?"
         reprompt_MSG = "Which of the following ingredients would you like to enhance with music?"
+        reprompt_MSG += ' '
+        resultat += ' '
         for x in ingredient_list:
             reprompt_MSG += x + ' '
             resultat += x + ' '
