@@ -39,30 +39,13 @@ Alexa: *plays a song that complements the bitter tastes in cheese*
 
 ## BitterSweet Custom Alexa Skill
 
-bittersweet.json defines the interaction model.
+bittersweet.json defines the interaction model for the skill.
 
 
 ## AWS Lambda Function
 
 lambda_function.py is a serverless AWS labmda function that has all of the backend code.  It takes a JSON file from the frontend of the Alexa skill based on the user's utterance, interprets the JSON file to formulate a generate a new JSON file representing the response that the skill should provide.
 
-### Functionality
-* `lambda_handler`:
-* `on_start`:
-* `on_launch`:
-* `on_end`:
-* `intent_scheme`:
-* `ingredientCheck`:
-* `taste_to_url`:
-* `json_play_music`:
-* `stop_the_skill`:
-* `assistance`:
-* `fallback_call`:
-* `plain_text_builder`:
-* `reprompt_builder`:
-* `card_builder`:
-* `response_field_builder_with_reprompt_and_card`:
-* `output_json_builder_with_reprompt_and_card`:
 
 ## Future Work
 
