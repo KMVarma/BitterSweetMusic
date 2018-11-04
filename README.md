@@ -38,8 +38,6 @@ lambda_function.py is an AWS labmda function that has all of the backend code.  
 * `response_field_builder_with_reprompt_and_card`:
 * `output_json_builder_with_reprompt_and_card`:
 
-## Notes
-
 ## Future Work
 
 * allow the skill to recognize more food and corresponding ingredients, as well as the possible songs that the ingredients can be mapped to.  This could potentially involve using a search API to find the ingredients in a given food.  One way to recognize unknown food is through using image recognition to identify the food.
@@ -48,3 +46,7 @@ lambda_function.py is an AWS labmda function that has all of the backend code.  
 * Lighting and color can also influence taste receptors, so using the light ring on the echo or connecting it to lights in the home, the lighting can be altered to enhance certain tastes
 * Not all sources that were consulted for mapping certain foods to the 5 taste receptors (bitter and sweet being two of them) agreed on a way to create this mapping, so the mapping that this skill uses should be verified in some way.  It could also be further researched though an empirical study.
 * Other taste receptors (sour, salty, umami) can be considered in order to better match the taste of an ingredient because many are not necessarily bitter or sweet
+
+## Potential Applications
+
+There is potential for BitterSweet Sounds to be applied to health purposes such as increasing sweetness in food in order to satisfy someone's craving for sugar without them needing to eat a lot of sugar. It can also alter the taste of a food that a person doesn't like to make it taste better to them, which is useful in situations where a person needs to eat something they don't like the taste of. When someone is stressed their tastes are distorted, which in most cases means a craving for unhealthy food high in sugar and fat, so BitterSweet Sounds can provide a way to distort the taste of foods in order to match the distortion that stress is causing.
