@@ -13,13 +13,18 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 In order to invoke the skill, the user should say "open BitterSweet Sounds"
 
 To specify the food that the user wants to match music to, they can use the following utterances:
-* ""
-* ""
-* ""
 
-In response to the above utterances, Alexa will list the ingredients in the food and ask the user to choose one to enhance the taste of. The user needs to respond with one of the ingredients and then the ingredient will be matched to a song that will start playing.
+"{food}"
+"{food}  please"
+"I am going to eat {food}"
+"I made {food}"
+"I cooked {food}"
+"I am eating {food}"
+"I ate {food}"
+"I cooked {food}"
+"I like {food}"
 
-
+In response to the above utterances, Alexa will list the ingredients in the food and ask the user to choose one to enhance the taste of. The user needs to respond with one of the ingredients and then the ingredient will be matched to a song that will start playing.  If the food is itself an ingredient (e.g. chicken), then no ingredients will be listed after the user specifies the food and the song will play immediately.
 
 ### Sample Usage
 
@@ -41,11 +46,9 @@ Alexa: *plays a song that complements the bitter tastes in cheese*
 
 bittersweet.json defines the interaction model for the skill.
 
-
 ## AWS Lambda Function
 
 lambda_function.py is a serverless AWS labmda function that has all of the backend code.  It takes a JSON file from the frontend of the Alexa skill based on the user's utterance, interprets the JSON file to formulate a generate a new JSON file representing the response that the skill should provide.
-
 
 ## Future Work
 
