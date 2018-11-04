@@ -9,6 +9,13 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 
 ## Setup
 
+### Wikidata API
+Wikidata is the knowledge base that is used to find a random song that matches to either bitter or sweet taste.
+
+To use the Wikidata client:
+
+        $ pip install Wikidata
+
 ## Usage
 
 ### Sample Usage
