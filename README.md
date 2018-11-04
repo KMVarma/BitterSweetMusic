@@ -12,13 +12,23 @@ BitterSweet Music is an Amazon Alexa skill that plays songs that enhance either 
 
 ### Sample Usage
 
+User: "Alexa, open BitterSweet Sounds"
+
+Alexa:
+
+User: "I'm eating a hamburger"
+
+Alexa: Which of the following ingredients
+
 ## BitterSweet Custom Alexa Skill
 
+### Intents
 
+### Utterances
 
 ## AWS Lambda Function
 
-lambda_function.py is an AWS labmda function that has all of the backend code.  It is serverless
+lambda_function.py is a serverless AWS labmda function that has all of the backend code.  It takes a JSON file from the frontend of the Alexa skill based on the user's utterance, interprets the JSON file to formulate a generate a new JSON file representing the response that the skill should provide.
 
 ### Functionality
 * `lambda_handler`:
